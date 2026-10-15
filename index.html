@@ -488,8 +488,20 @@ footer a{color:var(--faint)}
   var tme=a?a.href:"https://t.me/sintez_cource_bot";
   var start=(tme.match(/start=([^&]+)/)||[])[1]||"";
   var tg="tg://resolve?domain=sintez_cource_bot"+(start?"&start="+start:"");
-  var go=document.getElementById("iab-go"); go.href=tg;
-  go.addEventListener("click",function(){ setTimeout(function(){ location.href=tme; },1200); });
+  var android=/Android/i.test(ua);
+  var deep=android
+    ? "intent://resolve?domain=sintez_cource_bot"+(start?"&start="+start:"")+"#Intent;scheme=tg;package=org.telegram.messenger;S.browser_fallback_url="+encodeURIComponent(tme)+";end"
+    : tg;
+  var go=document.getElementById("iab-go"); go.href=deep;
+  // все кнопки «в бота» на странице тоже пробуют открыть приложение Telegram напрямую
+  document.querySelectorAll('a[href*="t.me/sintez_cource_bot"]').forEach(function(x){
+    var st=(x.href.match(/start=([^&]+)/)||[])[1]||start;
+    x.href=android
+      ? "intent://resolve?domain=sintez_cource_bot"+(st?"&start="+st:"")+"#Intent;scheme=tg;package=org.telegram.messenger;S.browser_fallback_url="+encodeURIComponent(x.href)+";end"
+      : "tg://resolve?domain=sintez_cource_bot"+(st?"&start="+st:"");
+    x.removeAttribute("target");
+  });
+  go.addEventListener("click",function(){ if(!android) setTimeout(function(){ location.href=tme; },1500); });
   document.getElementById("iab-copy").addEventListener("click",function(){
     var b=this; var done=function(){ b.textContent="Скопировано ✓"; };
     if(navigator.clipboard){ navigator.clipboard.writeText(tme).then(done,function(){ prompt("Скопируй ссылку:",tme); }); }
