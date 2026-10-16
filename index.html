@@ -515,7 +515,7 @@ footer a{color:var(--faint)}
 <script>
 /* счётчик посещений и кликов → панель СИНТЕЗ */
 (function(){
-  var TRACK="__TRACK__"; if(!TRACK||TRACK.indexOf("__")===0) return;
+  var TRACK="https://worker-production-d4f6.up.railway.app"; if(!TRACK||TRACK.indexOf("__")===0) return;
   var ua=navigator.userAgent||"";
   var app=/TikTok|musical_ly|Bytedance/i.test(ua)?"tiktok":/Instagram/i.test(ua)?"instagram":/Threads/i.test(ua)?"threads":/FBAN|FBAV/i.test(ua)?"facebook":/Telegram/i.test(ua)?"telegram":"";
   var p=""; try{p=localStorage.getItem("sintez_p")||"";}catch(e){}
