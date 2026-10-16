@@ -21,7 +21,7 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-
 img{max-width:100%;display:block}
 a{color:var(--accent)}
 .wrap{max-width:1440px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)} /* контейнер 1440, контент 1360 */
-@media (min-width:1024px){body{font-size:15px}}
+
 section{padding-block:clamp(64px,9vw,120px)}
 .eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
 h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;text-wrap:balance;letter-spacing:-.01em}
@@ -205,6 +205,7 @@ footer a{color:var(--faint)}
 @keyframes scan{0%,100%{top:10%}50%{top:86%}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media (min-width:1024px){body{font-size:15px}.lessons,.stat span,.facts span,footer,.result,.result small,.nav-links{font-size:15px}}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
