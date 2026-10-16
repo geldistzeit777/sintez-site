@@ -20,7 +20,8 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:var(--accent)}
-.wrap{max-width:1200px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+.wrap{max-width:1440px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)} /* контейнер 1440, контент 1360 */
+@media (min-width:1024px){body{font-size:15px}}
 section{padding-block:clamp(64px,9vw,120px)}
 .eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
 h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;text-wrap:balance;letter-spacing:-.01em}
@@ -44,6 +45,7 @@ p{margin:0}
 .nav-links{display:flex;align-items:center;gap:28px;font-size:15px;font-weight:500}
 .nav-links a{color:#C9C7C0;text-decoration:none}
 .nav-links a:hover{color:var(--fg)}
+.nav-links a.btn,.nav-links a.btn:hover{color:var(--accent-ink)}
 .nav .btn{min-height:44px;padding:0 18px;font-size:15px}
 @media (max-width:860px){.nav-links a:not(.btn){display:none}}
 
@@ -507,6 +509,28 @@ footer a{color:var(--faint)}
     if(navigator.clipboard){ navigator.clipboard.writeText(tme).then(done,function(){ prompt("Скопируй ссылку:",tme); }); }
     else { prompt("Скопируй ссылку:",tme); }
   });
+})();
+</script>
+<script>
+/* счётчик посещений и кликов → панель СИНТЕЗ */
+(function(){
+  var TRACK="__TRACK__"; if(!TRACK||TRACK.indexOf("__")===0) return;
+  var ua=navigator.userAgent||"";
+  var app=/TikTok|musical_ly|Bytedance/i.test(ua)?"tiktok":/Instagram/i.test(ua)?"instagram":/Threads/i.test(ua)?"threads":/FBAN|FBAV/i.test(ua)?"facebook":/Telegram/i.test(ua)?"telegram":"";
+  var p=""; try{p=localStorage.getItem("sintez_p")||"";}catch(e){}
+  var q=(new URLSearchParams(location.search).get("p")||"").replace(/[^A-Za-z0-9_]/g,"").slice(0,30); if(q) p=q;
+  var sid=""; try{sid=localStorage.getItem("sintez_sid")||"";}catch(e){}
+  if(!sid){ sid=Math.random().toString(36).slice(2)+Date.now().toString(36); try{localStorage.setItem("sintez_sid",sid);}catch(e){} }
+  function send(e){
+    var u=TRACK+"/t?e="+e+"&p="+encodeURIComponent(p)+"&s="+sid+"&a="+app;
+    try{ if(navigator.sendBeacon && navigator.sendBeacon(u)) return; }catch(_){}
+    try{ fetch(u,{method:"GET",mode:"no-cors",keepalive:true}); }catch(_){ new Image().src=u; }
+  }
+  send("visit");
+  document.addEventListener("click",function(ev){
+    var a=ev.target.closest&&ev.target.closest('a[href*="sintez_cource_bot"],#iab-go');
+    if(a) send("click");
+  },true);
 })();
 </script>
 </body></html>
