@@ -10,7 +10,11 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
 <link rel="preload" as="image" href="img/rings-720.webp" fetchpriority="high">
-<style>html,body{margin:0;background:#0E0E10;color:#F2F0EA}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<style>html,body{margin:0;background:#0E0E10;color:#F2F0EA}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
+.orb-v::-webkit-media-controls,.orb-v::-webkit-media-controls-panel,.orb-v::-webkit-media-controls-overlay-play-button,.orb-v::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none;opacity:0!important}
+.orb.still .orb-v{animation:orbFloat 7s ease-in-out infinite}
+@keyframes orbFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(4deg)}}
+</style>
 </head><body>
 <div id="pre" aria-hidden="true"><div class="pre-in"><svg viewBox="0 0 360 260" width="150" height="108" fill="none"><circle class="pc1" cx="130" cy="130" r="104" stroke="#D4FF3A" stroke-width="18"/><circle class="pc2" cx="230" cy="130" r="104" stroke="#F2F0EA" stroke-width="18"/></svg><div class="pre-n"><span id="preN">0</span>%</div></div></div>
 <div id="prog" aria-hidden="true"></div><div id="glow" aria-hidden="true"></div>
@@ -319,7 +323,7 @@ body:not(.ready) .orb[data-tilt]{transform:translateY(24px)}
     </div>
     <div>
       <div class="orb" data-tilt aria-hidden="true">
-        <video class="orb-v" autoplay muted loop playsinline preload="auto" poster="img/rings-720.webp"><source src="img/rings-480.mp4" type="video/mp4" media="(max-width: 700px)"><source src="img/rings.mp4" type="video/mp4"></video>
+        <video class="orb-v" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" poster="img/rings-720.webp"><source src="img/rings-480.mp4" type="video/mp4" media="(max-width: 700px)"><source src="img/rings.mp4" type="video/mp4"></video>
         <div class="orb-tag t1"><b>8</b> модулей</div><div class="orb-tag t2"><b>42</b> урока</div><div class="orb-tag t3"><b>$15</b> навсегда</div>
       </div>
       <div class="stats">
@@ -657,6 +661,15 @@ body:not(.ready) .orb[data-tilt]{transform:translateY(24px)}
     });
     document.querySelectorAll('.btn-primary').forEach(function(b){b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.15)+'px,'+((e.clientY-r.top-r.height/2)*.25)+'px)'});b.addEventListener('mouseleave',function(){b.style.transform=''})});
   }
+})();
+</script>
+<script>
+(function(){var v=document.querySelector('.orb-v');if(!v)return;var o=v.closest('.orb');
+v.muted=true;v.defaultMuted=true;v.setAttribute('muted','');v.playsInline=true;
+function go(){if(!v.paused)return;var p=v.play();if(p&&p.catch)p.then(function(){o&&o.classList.remove('still')}).catch(function(){o&&o.classList.add('still')});}
+go();v.addEventListener('canplay',go);document.addEventListener('visibilitychange',function(){if(!document.hidden)go()});
+['touchstart','pointerdown','scroll','keydown'].forEach(function(e){window.addEventListener(e,go,{passive:true})});
+v.addEventListener('playing',function(){o&&o.classList.remove('still')});
 })();
 </script>
 </body></html>
