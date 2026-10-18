@@ -210,6 +210,8 @@ footer a{color:var(--faint)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 @media (min-width:1024px){body{font-size:15px}.lessons,.stat span,.facts span,footer,.result,.result small,.nav-links{font-size:15px}}
 
+p,li,.lead,.desc,figcaption,.result,.who p,.trend-card p,.faq details p{text-wrap:pretty}
+h1,h2,h3,.tagline,.d{text-wrap:balance}
 /* ===== motion upgrade ===== */
 html{scroll-behavior:smooth}
 #pre{position:fixed;inset:0;z-index:200;background:#0E0E10;display:grid;place-items:center;transition:transform .9s cubic-bezier(.76,0,.24,1)}
@@ -291,15 +293,15 @@ body:not(.ready) .orb[data-tilt]{transform:translateY(24px)}
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <div class="live"><span class="dot"></span>AI-КУРС В TELEGRAM · НАБОР ОТКРЫТ</div>
+      <div class="live"><span class="dot"></span>AI-КУРС В TELEGRAM · НАБОР ОТКРЫТ</div>
       <h1 class="wordmark" aria-label="СИНТЕЗ"><span class="ch" style="--i:0">С</span><span class="ch" style="--i:1">И</span><span class="ch" style="--i:2">Н</span><span class="ch" style="--i:3">Т</span><span class="ch" style="--i:4">Е</span><span class="ch" style="--i:5">З</span></h1>
-      <p class="tagline">Курс, после которого нейросети <em>работают на тебя</em></p>
-      <p class="lead">Тексты, картинки, видео для соцсетей, голос, автоматизации и свой сайт — без программирования. Каждый урок заканчивается готовым результатом.</p>
+      <p class="tagline">Курс, после которого нейросети <em>работают на тебя</em></p>
+      <p class="lead">Тексты, картинки, видео для соцсетей, голос, автоматизации и свой сайт — без программирования. Каждый урок заканчивается готовым результатом.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://t.me/sintez_cource_bot?start=landing_hero" target="_blank" rel="noopener">Забрать 50 промптов бесплатно<svg width="18" height="18" aria-hidden="true"><use href="#arr"/></svg></a>
+        <a class="btn btn-primary" href="https://t.me/sintez_cource_bot?start=landing_hero" target="_blank" rel="noopener">Забрать 50 промптов бесплатно<svg width="18" height="18" aria-hidden="true"><use href="#arr"/></svg></a>
         <a class="btn btn-ghost" href="#program">Смотреть программу</a>
       </div>
-      <p class="price-note">Весь курс — <b>$15</b>, один платёж и доступ навсегда</p>
+      <p class="price-note">Весь курс — <b>$15</b>, один платёж и доступ навсегда</p>
     </div>
     <div>
       <div class="orb" data-tilt aria-hidden="true">
@@ -319,71 +321,71 @@ body:not(.ready) .orb[data-tilt]{transform:translateY(24px)}
 
 <section id="who" style="padding-top:0">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">Для кого</div><h2>Не нужен опыт и код. Нужен телефон и 20 минут в день</h2></div>
+    <div class="head"><div class="eyebrow">Для кого</div><h2>Не нужен опыт и код. Нужен телефон и 20 минут в день</h2></div>
     <div class="cards4">
-      <article class="who"><img src="img/3d-t4.jpg" alt="" loading="lazy" style="object-position:50% 35%"><div><h3>Блогерам</h3><p>Ролики, обложки и посты быстрее — без съёмок и дизайнера</p></div></article>
-      <article class="who"><img src="img/3d-m06.jpg" alt="" loading="lazy"><div><h3>Предпринимателям</h3><p>Фото товаров, реклама, бот для клиентов и сайт своими руками</p></div></article>
-      <article class="who"><img src="img/3d-m03.jpg" alt="" loading="lazy"><div><h3>Новую профессию</h3><p>Портфолио из работ курса, чтобы делать AI-контент для клиентов</p></div></article>
-      <article class="who"><img src="img/3d-m02.jpg" alt="" loading="lazy"><div><h3>Офису и учёбе</h3><p>Письма, отчёты, таблицы и рутина, которая теперь делается сама</p></div></article>
+      <article class="who"><img src="img/3d-t4.jpg" alt="" loading="lazy" style="object-position:50% 35%"><div><h3>Блогерам</h3><p>Ролики, обложки и посты быстрее — без съёмок и дизайнера</p></div></article>
+      <article class="who"><img src="img/3d-m06.jpg" alt="" loading="lazy"><div><h3>Предпринимателям</h3><p>Фото товаров, реклама, бот для клиентов и сайт своими руками</p></div></article>
+      <article class="who"><img src="img/3d-m03.jpg" alt="" loading="lazy"><div><h3>Новую профессию</h3><p>Портфолио из работ курса, чтобы делать AI-контент для клиентов</p></div></article>
+      <article class="who"><img src="img/3d-m02.jpg" alt="" loading="lazy"><div><h3>Офису и учёбе</h3><p>Письма, отчёты, таблицы и рутина, которая теперь делается сама</p></div></article>
     </div>
   </div>
 </section>
 
 <section id="program" style="background:linear-gradient(180deg,var(--bg),#121216 30%,var(--bg))">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">Программа</div><h2>8 модулей. 42 урока. Каждый — с готовым результатом</h2><p class="lead">Текстовые уроки в закрытой Telegram-группе, каждый модуль — отдельная тема. В уроке: объяснение с примерами, готовые промпты и задание. Вопросы — в чате курса.</p></div>
+    <div class="head"><div class="eyebrow">Программа</div><h2>8 модулей. 42 урока. Каждый — с готовым результатом</h2><p class="lead">Текстовые уроки в закрытой Telegram-группе, каждый модуль — отдельная тема. В уроке: объяснение с примерами, готовые промпты и задание. Вопросы — в чате курса.</p></div>
     <div class="modules" id="modules"></div>
   </div>
 </section>
 
 <section id="showcase" class="showcase">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">Что ты соберёшь</div><h2>Не конспект — <span class="hl">готовые проекты</span></h2><p class="lead">Каждый модуль заканчивается реальным результатом. Вот два из них — бот и сайт, которые ты сделаешь сам, без кода.</p></div>
+    <div class="head"><div class="eyebrow">Что ты соберёшь</div><h2>Не конспект — <span class="hl">готовые проекты</span></h2><p class="lead">Каждый модуль заканчивается реальным результатом. Вот два из них — бот и сайт, которые ты сделаешь сам, без кода.</p></div>
     <div class="sc-grid">
-      <figure class="sc-card" data-tilt data-speed="-0.06"><img src="img/show-bot.jpg" alt="Telegram-бот кофейни на экране телефона — проект модуля 06" loading="lazy"><figcaption><b>Модуль 06</b> Бот, который принимает заказы и бронь</figcaption></figure>
-      <figure class="sc-card" data-tilt data-speed="0.06"><img src="img/show-site.jpg" alt="Лендинг кофейни на ноутбуке — проект модуля 07" loading="lazy"><figcaption><b>Модуль 07</b> Сайт с формой заявки — за вечер</figcaption></figure>
+      <figure class="sc-card" data-tilt data-speed="-0.06"><img src="img/show-bot.jpg" alt="Telegram-бот кофейни на экране телефона — проект модуля 06" loading="lazy"><figcaption><b>Модуль 06</b> Бот, который принимает заказы и бронь</figcaption></figure>
+      <figure class="sc-card" data-tilt data-speed="0.06"><img src="img/show-site.jpg" alt="Лендинг кофейни на ноутбуке — проект модуля 07" loading="lazy"><figcaption><b>Модуль 07</b> Сайт с формой заявки — за вечер</figcaption></figure>
     </div>
   </div>
 </section>
 
 <section id="trends">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">Тренды 2026</div><h2>Что сейчас взрывает ленту — и где этому учим</h2><p class="lead">Шесть AI-форматов, которые набирают миллионы просмотров. Каждый разбираем по шагам и повторяем на своей теме.</p></div>
+    <div class="head"><div class="eyebrow">Тренды 2026</div><h2>Что сейчас взрывает ленту — и где этому учим</h2><p class="lead">Шесть AI-форматов, которые набирают миллионы просмотров. Каждый разбираем по шагам и повторяем на своей теме.</p></div>
     <div class="trends">
-      <article class="trend-card"><div class="vert"><img src="img/3d-t1.jpg" alt="" loading="lazy"><div class="shade"></div><div class="chips"><span class="chip on">ФОТО → ФИГУРКА</span></div><div class="over">Ты — коллекционная <em>фигурка</em></div></div><div class="tags"><span class="tag">МОДУЛЬ 03</span></div><h3>3D-фигурка в коробке</h3><p>Фото превращается в коллекционную игрушку. Самый простой вход в AI-картинки.</p></article>
-      <article class="trend-card"><div class="vert"><img src="img/3d-t2.jpg" alt="" loading="lazy"><div class="shade"></div><div class="chips"><span class="chip on">АБСУРД</span></div><div class="over">Совещание.<br><em>Утка — CEO</em></div></div><div class="tags"><span class="tag">МОДУЛЬ 02</span><span class="tag">МОДУЛЬ 04</span></div><h3>Абсурдные ролики</h3><p>Странная идея чаще залетает в рекомендации. Учим придумывать такие идеи и снимать их нейросетью.</p></article>
-      <article class="trend-card"><div class="vert"><img src="img/3d-t3.jpg" alt="" loading="lazy"><div class="shade"></div><div class="chips"><span class="chip on">AI-СЕРИАЛ</span></div><div class="over">Серия 1.<br><em>Курьер из 2077</em></div></div><div class="tags"><span class="tag">МОДУЛЬ 04</span></div><h3>AI-сериал с одним героем</h3><p>Короткие эпизоды с постоянным персонажем. Зрители ждут продолжения и спорят в комментариях.</p></article>
-      <article class="trend-card"><div class="vert"><img src="img/3d-t4.jpg" alt="" loading="lazy"><div class="shade"></div><div class="scan"></div><div class="chips"><span class="chip on">ЦИФРОВОЙ ДВОЙНИК</span></div></div><div class="tags"><span class="tag">МОДУЛЬ 03</span><span class="tag">МОДУЛЬ 05</span></div><h3>AI-инфлюенсер</h3><p>Синтетический ведущий рассказывает и продаёт, пока автор не снимается. Говорит на любом языке.</p></article>
-      <article class="trend-card"><div class="vert"><img src="img/3d-t5.jpg" alt="" loading="lazy"><div class="shade"></div><div class="chips"><span class="chip on">ПСЕВДОДОК</span></div><div class="over">Как живут <em>миллиардеры</em></div></div><div class="tags"><span class="tag">МОДУЛЬ 04</span><span class="tag">МОДУЛЬ 05</span></div><h3>Безликая документалка</h3><p>Кинематографичные ролики про деньги, города и будущее, полностью из нейросетей. Лицо не нужно.</p></article>
-      <article class="trend-card"><div class="vert"><img src="img/3d-t6.jpg" alt="" loading="lazy"><div class="shade"></div><div class="chips"><span class="chip on">ФОТО → ВИДЕО</span></div></div><div class="tags"><span class="tag">МОДУЛЬ 04</span></div><h3>Оживление картинки</h3><p>Статичное фото начинает двигаться. Движение держит внимание дольше картинки — бренды массово это используют.</p></article>
+      <article class="trend-card"><div class="vert"><img src="img/3d-t1.jpg" alt="" loading="lazy"><div class="shade"></div><div class="chips"><span class="chip on">ФОТО → ФИГУРКА</span></div><div class="over">Ты — коллекционная <em>фигурка</em></div></div><div class="tags"><span class="tag">МОДУЛЬ 03</span></div><h3>3D-фигурка в коробке</h3><p>Фото превращается в коллекционную игрушку. Самый простой вход в AI-картинки.</p></article>
+      <article class="trend-card"><div class="vert"><img src="img/3d-t2.jpg" alt="" loading="lazy"><div class="shade"></div><div class="chips"><span class="chip on">АБСУРД</span></div><div class="over">Совещание.<br><em>Утка — CEO</em></div></div><div class="tags"><span class="tag">МОДУЛЬ 02</span><span class="tag">МОДУЛЬ 04</span></div><h3>Абсурдные ролики</h3><p>Странная идея чаще залетает в рекомендации. Учим придумывать такие идеи и снимать их нейросетью.</p></article>
+      <article class="trend-card"><div class="vert"><img src="img/3d-t3.jpg" alt="" loading="lazy"><div class="shade"></div><div class="chips"><span class="chip on">AI-СЕРИАЛ</span></div><div class="over">Серия 1.<br><em>Курьер из 2077</em></div></div><div class="tags"><span class="tag">МОДУЛЬ 04</span></div><h3>AI-сериал с одним героем</h3><p>Короткие эпизоды с постоянным персонажем. Зрители ждут продолжения и спорят в комментариях.</p></article>
+      <article class="trend-card"><div class="vert"><img src="img/3d-t4.jpg" alt="" loading="lazy"><div class="shade"></div><div class="scan"></div><div class="chips"><span class="chip on">ЦИФРОВОЙ ДВОЙНИК</span></div></div><div class="tags"><span class="tag">МОДУЛЬ 03</span><span class="tag">МОДУЛЬ 05</span></div><h3>AI-инфлюенсер</h3><p>Синтетический ведущий рассказывает и продаёт, пока автор не снимается. Говорит на любом языке.</p></article>
+      <article class="trend-card"><div class="vert"><img src="img/3d-t5.jpg" alt="" loading="lazy"><div class="shade"></div><div class="chips"><span class="chip on">ПСЕВДОДОК</span></div><div class="over">Как живут <em>миллиардеры</em></div></div><div class="tags"><span class="tag">МОДУЛЬ 04</span><span class="tag">МОДУЛЬ 05</span></div><h3>Безликая документалка</h3><p>Кинематографичные ролики про деньги, города и будущее, полностью из нейросетей. Лицо не нужно.</p></article>
+      <article class="trend-card"><div class="vert"><img src="img/3d-t6.jpg" alt="" loading="lazy"><div class="shade"></div><div class="chips"><span class="chip on">ФОТО → ВИДЕО</span></div></div><div class="tags"><span class="tag">МОДУЛЬ 04</span></div><h3>Оживление картинки</h3><p>Статичное фото начинает двигаться. Движение держит внимание дольше картинки — бренды массово это используют.</p></article>
     </div>
   </div>
 </section>
 
 <section id="how">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">Как проходит</div><h2>Всё внутри Telegram</h2></div>
+    <div class="head"><div class="eyebrow">Как проходит</div><h2>Всё внутри Telegram</h2></div>
     <div class="steps">
-      <div class="step"><div class="num">1</div><h3>Заходишь в бота</h3><p>Сразу получаешь 50 промптов и модуль 01 бесплатно — пробуешь до оплаты</p></div>
-      <div class="step"><div class="num">2</div><h3>Оплачиваешь $15</h3><p>Картой через Tribute — сервис платежей прямо в Telegram</p></div>
-      <div class="step"><div class="num">3</div><h3>Проходишь уроки</h3><p>Закрытая группа с темами по модулям: урок на 3–5 минут чтения, шпаргалка и задание</p></div>
-      <div class="step"><div class="num">4</div><h3>Делаешь задания</h3><p>Чат курса с темой на каждый модуль: вопросы, разборы, обмен работами</p></div>
+      <div class="step"><div class="num">1</div><h3>Заходишь в бота</h3><p>Сразу получаешь 50 промптов и модуль 01 бесплатно — пробуешь до оплаты</p></div>
+      <div class="step"><div class="num">2</div><h3>Оплачиваешь $15</h3><p>Картой через Tribute — сервис платежей прямо в Telegram</p></div>
+      <div class="step"><div class="num">3</div><h3>Проходишь уроки</h3><p>Закрытая группа с темами по модулям: урок на 3–5 минут чтения, шпаргалка и задание</p></div>
+      <div class="step"><div class="num">4</div><h3>Делаешь задания</h3><p>Чат курса с темой на каждый модуль: вопросы, разборы, обмен работами</p></div>
     </div>
   </div>
 </section>
 
 <section id="result" style="padding-top:0">
   <div class="wrap split">
-    <div class="photo"><img src="img/3d-m08.jpg" alt="" loading="lazy"><div class="shade"></div><p>К концу курса у тебя портфолио, а не конспект</p></div>
+    <div class="photo"><img src="img/3d-m08.jpg" alt="" loading="lazy"><div class="shade"></div><p>К концу курса у тебя портфолио, а не конспект</p></div>
     <div>
-      <div class="eyebrow">Что останется у тебя</div>
+      <div class="eyebrow">Что останется у тебя</div>
       <ol class="outcomes">
-        <li>Контент-план на месяц и 10 готовых постов</li>
-        <li>10 визуалов в едином стиле</li>
-        <li>3 ролика для TikTok или Reels с озвучкой и музыкой</li>
+        <li>Контент-план на месяц и 10 готовых постов</li>
+        <li>10 визуалов в едином стиле</li>
+        <li>3 ролика для TikTok или Reels с озвучкой и музыкой</li>
         <li>Telegram-бот, который отвечает клиентам</li>
-        <li>Опубликованный сайт с формой заявки</li>
-        <li>Библиотека промптов и шаблонов навсегда</li>
+        <li>Опубликованный сайт с формой заявки</li>
+        <li>Библиотека промптов и шаблонов навсегда</li>
       </ol>
     </div>
   </div>
@@ -391,26 +393,26 @@ body:not(.ready) .orb[data-tilt]{transform:translateY(24px)}
 
 <section id="price">
   <div class="wrap">
-    <div class="head" style="align-items:center;text-align:center"><div class="eyebrow">Цена</div><h2>Весь курс — один платёж</h2></div>
+    <div class="head" style="align-items:center;text-align:center"><div class="eyebrow">Цена</div><h2>Весь курс — один платёж</h2></div>
     <div class="price">
       <div class="price-left">
-        <h3 style="font-size:clamp(20px,2.4vw,26px)">Полный доступ к СИНТЕЗ</h3>
+        <h3 style="font-size:clamp(20px,2.4vw,26px)">Полный доступ к СИНТЕЗ</h3>
         <div class="big"><b>$15</b><span>разовый платёж</span></div>
-        <p class="lead" style="font-size:17px">Дешевле одной месячной подписки на нейросеть. Оплата картой через Tribute прямо в Telegram.</p>
-        <a class="btn btn-primary" href="https://t.me/sintez_cource_bot?start=landing_price" target="_blank" rel="noopener">Получить доступ за $15</a>
+        <p class="lead" style="font-size:17px">Дешевле одной месячной подписки на нейросеть. Оплата картой через Tribute прямо в Telegram.</p>
+        <a class="btn btn-primary" href="https://t.me/sintez_cource_bot?start=landing_price" target="_blank" rel="noopener">Получить доступ за $15</a>
       </div>
       <div class="price-right">
-        <div class="eyebrow" style="color:var(--faint)">Что входит</div>
-        <div class="inc"><svg class="check" aria-hidden="true"><use href="#ck"/></svg>Все 8 модулей, 42 урока</div>
-        <div class="inc"><svg class="check" aria-hidden="true"><use href="#ck"/></svg>Шпаргалка к каждому уроку</div>
-        <div class="inc"><svg class="check" aria-hidden="true"><use href="#ck"/></svg>Библиотека промптов и шаблонов</div>
-        <div class="inc"><svg class="check" aria-hidden="true"><use href="#ck"/></svg>Чат учеников с темой на каждый модуль</div>
+        <div class="eyebrow" style="color:var(--faint)">Что входит</div>
+        <div class="inc"><svg class="check" aria-hidden="true"><use href="#ck"/></svg>Все 8 модулей, 42 урока</div>
+        <div class="inc"><svg class="check" aria-hidden="true"><use href="#ck"/></svg>Шпаргалка к каждому уроку</div>
+        <div class="inc"><svg class="check" aria-hidden="true"><use href="#ck"/></svg>Библиотека промптов и шаблонов</div>
+        <div class="inc"><svg class="check" aria-hidden="true"><use href="#ck"/></svg>Чат учеников с темой на каждый модуль</div>
         <div class="inc"><svg class="check" aria-hidden="true"><use href="#ck"/></svg>Обновляемый список AI-инструментов</div>
-        <div class="inc"><svg class="check" aria-hidden="true"><use href="#ck"/></svg>Бонус: продвинутые агенты в n8n</div>
-        <div class="inc"><svg class="check" aria-hidden="true"><use href="#ck"/></svg><b>Доступ навсегда, без подписки</b></div>
+        <div class="inc"><svg class="check" aria-hidden="true"><use href="#ck"/></svg>Бонус: продвинутые агенты в n8n</div>
+        <div class="inc"><svg class="check" aria-hidden="true"><use href="#ck"/></svg><b>Доступ навсегда, без подписки</b></div>
       </div>
     </div>
-    <div class="free"><span><b style="color:var(--accent)">Сначала попробуй бесплатно:</b> модуль 01 и 50 промптов — в боте, без оплаты</span><a href="https://t.me/sintez_cource_bot?start=landing_free" target="_blank" rel="noopener" style="font-weight:700">Забрать →</a></div>
+    <div class="free"><span><b style="color:var(--accent)">Сначала попробуй бесплатно:</b> модуль 01 и 50 промптов — в боте, без оплаты</span><a href="https://t.me/sintez_cource_bot?start=landing_free" target="_blank" rel="noopener" style="font-weight:700">Забрать →</a></div>
   </div>
 </section>
 
@@ -420,8 +422,8 @@ body:not(.ready) .orb[data-tilt]{transform:translateY(24px)}
     <div style="display:flex;flex-direction:column;gap:20px;min-width:0">
       <div class="eyebrow">Кто делает курс</div>
       <h2 style="font-size:clamp(28px,3.6vw,44px)">Команда СИНТЕЗ</h2>
-      <p class="lead">Мы собрали курс по одному принципу: коротко, на практике и без воды. Каждый урок заканчивается готовым результатом, а список AI-инструментов в группе курса обновляется каждый месяц.</p>
-      <div class="facts"><div><b>42</b><span>урока с практикой</span></div><div><b>3–5</b><span>минут на урок</span></div><div><b>∞</b><span>доступ навсегда</span></div></div>
+      <p class="lead">Мы собрали курс по одному принципу: коротко, на практике и без воды. Каждый урок заканчивается готовым результатом, а список AI-инструментов в группе курса обновляется каждый месяц.</p>
+      <div class="facts"><div><b>42</b><span>урока с практикой</span></div><div><b>3–5</b><span>минут на урок</span></div><div><b>∞</b><span>доступ навсегда</span></div></div>
     </div>
   </div>
 </section>
@@ -430,14 +432,14 @@ body:not(.ready) .orb[data-tilt]{transform:translateY(24px)}
   <div class="wrap">
     <div class="head"><div class="eyebrow">Вопросы</div><h2>Частые вопросы</h2></div>
     <div class="faq">
-      <details><summary>Нужен ли опыт или программирование?</summary><p>Нет. Курс рассчитан на новичков, всё делается словами в обычных сервисах.</p></details>
-      <details><summary>Сколько нужно тратить на нейросети?</summary><p>Первые модули проходятся на бесплатных тарифах. Комфортный набор подписок — около $35–55 в месяц, но он не обязателен.</p></details>
-      <details><summary>Сколько времени займёт курс?</summary><p>Урок читается за 3–5 минут, ещё 10–15 минут — на задание. При 20–30 минутах в день курс проходится за 4–6 недель.</p></details>
-      <details><summary>Это видео-курс?</summary><p>Нет, уроки текстовые: пошаговое объяснение с примерами, готовые промпты и задание. Так удобнее копировать промпты и возвращаться к нужному шагу. Если появятся видео — купившие получат их бесплатно.</p></details>
-      <details><summary>Как оплатить?</summary><p>В боте нажми «Купить» — оплата картой через Tribute, сервис для платежей в Telegram. После оплаты доступ в закрытую группу курса придёт автоматически.</p></details>
-      <details><summary>Можно учиться с телефона?</summary><p>Да. Уроки и чат — в Telegram, большинство сервисов работают в мобильном браузере или приложении.</p></details>
-      <details><summary>Как долго сохраняется доступ?</summary><p>Навсегда. Оплатил один раз — уроки, шпаргалки, обновления и чат остаются с тобой без доплат.</p></details>
-      <details><summary>Что если у меня не получится?</summary><p>Задай вопрос в чате модуля: там разбирают ошибки и делятся решениями.</p></details>
+      <details><summary>Нужен ли опыт или программирование?</summary><p>Нет. Курс рассчитан на новичков, всё делается словами в обычных сервисах.</p></details>
+      <details><summary>Сколько нужно тратить на нейросети?</summary><p>Первые модули проходятся на бесплатных тарифах. Комфортный набор подписок — около $35–55 в месяц, но он не обязателен.</p></details>
+      <details><summary>Сколько времени займёт курс?</summary><p>Урок читается за 3–5 минут, ещё 10–15 минут — на задание. При 20–30 минутах в день курс проходится за 4–6 недель.</p></details>
+      <details><summary>Это видео-курс?</summary><p>Нет, уроки текстовые: пошаговое объяснение с примерами, готовые промпты и задание. Так удобнее копировать промпты и возвращаться к нужному шагу. Если появятся видео — купившие получат их бесплатно.</p></details>
+      <details><summary>Как оплатить?</summary><p>В боте нажми «Купить» — оплата картой через Tribute, сервис для платежей в Telegram. После оплаты доступ в закрытую группу курса придёт автоматически.</p></details>
+      <details><summary>Можно учиться с телефона?</summary><p>Да. Уроки и чат — в Telegram, большинство сервисов работают в мобильном браузере или приложении.</p></details>
+      <details><summary>Как долго сохраняется доступ?</summary><p>Навсегда. Оплатил один раз — уроки, шпаргалки, обновления и чат остаются с тобой без доплат.</p></details>
+      <details><summary>Что если у меня не получится?</summary><p>Задай вопрос в чате модуля: там разбирают ошибки и делятся решениями.</p></details>
     </div>
   </div>
 </section>
@@ -448,8 +450,8 @@ body:not(.ready) .orb[data-tilt]{transform:translateY(24px)}
       <img src="img/3d-m07.jpg" alt="" loading="lazy">
       <div class="shade"></div>
       <div>
-        <h2>Начни сегодня. Первый модуль — бесплатно</h2>
-        <a class="btn btn-primary" style="align-self:flex-start" href="https://t.me/sintez_cource_bot?start=landing_final" target="_blank" rel="noopener">Открыть бота в Telegram<svg width="18" height="18" aria-hidden="true"><use href="#arr"/></svg></a>
+        <h2>Начни сегодня. Первый модуль — бесплатно</h2>
+        <a class="btn btn-primary" style="align-self:flex-start" href="https://t.me/sintez_cource_bot?start=landing_final" target="_blank" rel="noopener">Открыть бота в Telegram<svg width="18" height="18" aria-hidden="true"><use href="#arr"/></svg></a>
       </div>
     </div>
   </div>
@@ -457,24 +459,24 @@ body:not(.ready) .orb[data-tilt]{transform:translateY(24px)}
 
 <section id="legal" style="padding-top:0">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">Документы</div><h2>Оферта и конфиденциальность</h2></div>
+    <div class="head"><div class="eyebrow">Документы</div><h2>Оферта и конфиденциальность</h2></div>
     <div class="faq legal">
       <details id="offer"><summary>Публичная оферта</summary>
-        <p><b>1. Стороны.</b> Продавец — команда проекта «СИНТЕЗ» (далее — «Продавец»), связь — Telegram @sintez_ai_support. Покупатель — любое лицо, оплатившее доступ к курсу «СИНТЕЗ» (далее — «Курс»). Оплата означает согласие с условиями этой оферты.</p>
-        <p><b>2. Предмет.</b> Продавец предоставляет доступ к информационным материалам Курса: 8 модулей, 42 текстовых урока, шпаргалки, промпты, задания и чат учеников в Telegram. Курс — образовательные материалы, а не индивидуальные консультации.</p>
-        <p><b>3. Цена и оплата.</b> Стоимость — $15 (или эквивалент в другой валюте), разовый платёж без подписки. Оплата принимается через сервис Tribute в Telegram. Продавец не получает и не хранит данные банковских карт.</p>
-        <p><b>4. Доступ.</b> После оплаты Покупатель получает доступ в закрытую Telegram-группу с уроками на весь срок существования Курса, включая будущие обновления. Доступ личный: передавать материалы третьим лицам и публиковать их запрещено.</p>
-        <p><b>5. Результат.</b> Курс учит пользоваться AI-инструментами. Продавец не гарантирует конкретный доход или коммерческий результат: он зависит от самого Покупателя. Условия и цены сторонних сервисов, упомянутых в Курсе, устанавливают их владельцы и могут меняться.</p>
-        <p><b>6. Возврат.</b> Доступ к цифровым материалам открывается сразу после оплаты, поэтому оплата возврату не подлежит. Исключение — если доступ не был предоставлен из-за технического сбоя на стороне Продавца: тогда Продавец восстанавливает доступ, а если это невозможно — возвращает оплату. По таким вопросам пиши в поддержку @sintez_ai_support.</p>
-        <p><b>7. Контакты.</b> Вопросы по Курсу и оплате: Telegram @sintez_ai_support.</p>
+        <p><b>1. Стороны.</b> Продавец — команда проекта «СИНТЕЗ» (далее — «Продавец»), связь — Telegram @sintez_ai_support. Покупатель — любое лицо, оплатившее доступ к курсу «СИНТЕЗ» (далее — «Курс»). Оплата означает согласие с условиями этой оферты.</p>
+        <p><b>2. Предмет.</b> Продавец предоставляет доступ к информационным материалам Курса: 8 модулей, 42 текстовых урока, шпаргалки, промпты, задания и чат учеников в Telegram. Курс — образовательные материалы, а не индивидуальные консультации.</p>
+        <p><b>3. Цена и оплата.</b> Стоимость — $15 (или эквивалент в другой валюте), разовый платёж без подписки. Оплата принимается через сервис Tribute в Telegram. Продавец не получает и не хранит данные банковских карт.</p>
+        <p><b>4. Доступ.</b> После оплаты Покупатель получает доступ в закрытую Telegram-группу с уроками на весь срок существования Курса, включая будущие обновления. Доступ личный: передавать материалы третьим лицам и публиковать их запрещено.</p>
+        <p><b>5. Результат.</b> Курс учит пользоваться AI-инструментами. Продавец не гарантирует конкретный доход или коммерческий результат: он зависит от самого Покупателя. Условия и цены сторонних сервисов, упомянутых в Курсе, устанавливают их владельцы и могут меняться.</p>
+        <p><b>6. Возврат.</b> Доступ к цифровым материалам открывается сразу после оплаты, поэтому оплата возврату не подлежит. Исключение — если доступ не был предоставлен из-за технического сбоя на стороне Продавца: тогда Продавец восстанавливает доступ, а если это невозможно — возвращает оплату. По таким вопросам пиши в поддержку @sintez_ai_support.</p>
+        <p><b>7. Контакты.</b> Вопросы по Курсу и оплате: Telegram @sintez_ai_support.</p>
       </details>
       <details id="privacy"><summary>Политика конфиденциальности</summary>
-        <p><b>Какие данные собираем.</b> Когда ты пишешь боту @sintez_cource_bot, сохраняются: Telegram ID, имя пользователя, отображаемое имя, время первого запуска и метка источника перехода (например, с какого сайта или ролика ты пришёл).</p>
-        <p><b>Зачем.</b> Чтобы выдать бесплатные материалы и доступ к Курсу после оплаты, отвечать на вопросы и понимать, какие каналы рекламы работают.</p>
-        <p><b>Оплата.</b> Платежи обрабатывает сервис Tribute. Данные карт Продавец не получает и не хранит.</p>
-        <p><b>Передача третьим лицам.</b> Данные не продаются и не передаются третьим лицам, кроме случаев, предусмотренных законом. Хранятся на сервере, где работает бот.</p>
-        <p><b>Удаление.</b> Чтобы удалить свои данные, напиши в @sintez_ai_support — удалим в течение 7 дней.</p>
-        <p><b>Ответственный:</b> команда проекта «СИНТЕЗ», контакт — @sintez_ai_support.</p>
+        <p><b>Какие данные собираем.</b> Когда ты пишешь боту @sintez_cource_bot, сохраняются: Telegram ID, имя пользователя, отображаемое имя, время первого запуска и метка источника перехода (например, с какого сайта или ролика ты пришёл).</p>
+        <p><b>Зачем.</b> Чтобы выдать бесплатные материалы и доступ к Курсу после оплаты, отвечать на вопросы и понимать, какие каналы рекламы работают.</p>
+        <p><b>Оплата.</b> Платежи обрабатывает сервис Tribute. Данные карт Продавец не получает и не хранит.</p>
+        <p><b>Передача третьим лицам.</b> Данные не продаются и не передаются третьим лицам, кроме случаев, предусмотренных законом. Хранятся на сервере, где работает бот.</p>
+        <p><b>Удаление.</b> Чтобы удалить свои данные, напиши в @sintez_ai_support — удалим в течение 7 дней.</p>
+        <p><b>Ответственный:</b> команда проекта «СИНТЕЗ», контакт — @sintez_ai_support.</p>
       </details>
     </div>
   </div>
@@ -488,7 +490,7 @@ body:not(.ready) .orb[data-tilt]{transform:translateY(24px)}
   </div>
 </footer>
 
-<div class="dock"><a class="btn btn-primary" href="https://t.me/sintez_cource_bot?start=landing_dock" target="_blank" rel="noopener">Начать бесплатно в Telegram</a></div>
+<div class="dock"><a class="btn btn-primary" href="https://t.me/sintez_cource_bot?start=landing_dock" target="_blank" rel="noopener">Начать бесплатно в Telegram</a></div>
 
 <script>
 (function(){
@@ -497,14 +499,14 @@ body:not(.ready) .orb[data-tilt]{transform:translateY(24px)}
 })();
 (function(){
   var M=[
-    {n:'01',t:'Основы и выбор ассистента',img:'3d-m01',lc:'5 УРОКОВ',trend:'',d:'Как работает AI, где он ошибается и какой ассистент — ChatGPT, Claude или Gemini — взять под свои задачи.',l:['Нейросеть простыми словами','Один запрос в трёх ассистентах','Настройка: инструкции, память, проекты','Голос и работа с фото','Безопасность: что нельзя загружать'],r:'своя задача решена в двух ассистентах',free:true},
-    {n:'02',t:'Промптинг — главный навык',img:'3d-m02',lc:'6 УРОКОВ',trend:'АБСУРДНЫЕ ИДЕИ',d:'Формула «роль + задача + контекст + пример + формат» и своя библиотека из 20 шаблонов.',l:['Формула промпта: плохо → хорошо','Как один пример меняет результат','Итерации вместо переписывания','Пусть AI сначала задаст вопросы','Проверка фактов и источников','Библиотека из 20 шаблонов'],r:'контент-план на месяц и 10 постов'},
-    {n:'03',t:'AI-изображения',img:'3d-m03',lc:'6 УРОКОВ',trend:'3D-ФИГУРКИ',d:'Обложки, рекламные баннеры, фото товара и свой персонаж в едином стиле.',l:['Как описать картинку: стиль, свет, ракурс','Правки словами: фон, одежда, надписи','Фото товара для магазина','Свой персонаж и единый стиль','Обложки для TikTok, Reels, YouTube','Права на картинки в рекламе'],r:'10 визуалов для своего проекта'},
-    {n:'04',t:'AI-видео для соцсетей',img:'3d-m04',lc:'6 УРОКОВ',trend:'AI-СЕРИАЛЫ',d:'Ролики 15–60 секунд: сцены из нейросети, движение камеры, аватар и монтаж в CapCut.',l:['Схема: картинка → движение → звук → монтаж','Как описать камеру, движение и свет','Один персонаж во всех сценах','Говорящий аватар и дубляж','Форматы, которые набирают просмотры','Субтитры, музыка и хук за 2 секунды'],r:'3 ролика для TikTok или Reels'},
-    {n:'05',t:'Голос и музыка',img:'3d-m05',lc:'5 УРОКОВ',trend:'ЦИФРОВОЙ ДВОЙНИК',d:'Озвучка роликов, клон своего голоса, дубляж на другие языки и свой трек.',l:['Озвучка: голос, интонации, паузы','Клон своего голоса и этика','Перевод и дубляж ролика','Песня или джингл для бренда','Права на AI-музыку'],r:'озвученные ролики со своей музыкой'},
-    {n:'06',t:'Автоматизация и агенты',img:'3d-m06',lc:'5 УРОКОВ',trend:'AI-ИНФЛЮЕНСЕР',d:'Сценарии, которые работают без тебя: заявки, ответы клиентам, автопостинг — без кода.',l:['Триггер → действие','Форма → таблица → уведомление','AI сортирует письма и пишет ответы','Бот, который отвечает по базе знаний','Автопостинг в соцсети'],r:'Telegram-бот для своего бизнеса'},
-    {n:'07',t:'Вайбкодинг без кода',img:'3d-m07',lc:'5 УРОКОВ',trend:'',d:'Описываешь словами — получаешь лендинг, квиз или мини-сервис с формой заявок.',l:['Как описать приложение','Лендинг для своего продукта за вечер','Калькулятор, квиз, запись на услугу','Оплата и формы заявок','Где ломается и как просить исправить'],r:'опубликованный сайт с формой заявки'},
-    {n:'08',t:'Финальный проект',img:'3d-m08',lc:'4 УРОКА',trend:'',d:'Собираешь всё в один проект и упаковываешь навыки: для своего дела, работы или клиентов.',l:['Портфолио из работ курса','Первые клиенты и цена работы','Коммерческое предложение с AI','Как следить за новыми инструментами'],r:'готовый проект и портфолио'}
+    {n:'01',t:'Основы и выбор ассистента',img:'3d-m01',lc:'5 УРОКОВ',trend:'',d:'Как работает AI, где он ошибается и какой ассистент — ChatGPT, Claude или Gemini — взять под свои задачи.',l:['Нейросеть простыми словами','Один запрос в трёх ассистентах','Настройка: инструкции, память, проекты','Голос и работа с фото','Безопасность: что нельзя загружать'],r:'своя задача решена в двух ассистентах',free:true},
+    {n:'02',t:'Промптинг — главный навык',img:'3d-m02',lc:'6 УРОКОВ',trend:'АБСУРДНЫЕ ИДЕИ',d:'Формула «роль + задача + контекст + пример + формат» и своя библиотека из 20 шаблонов.',l:['Формула промпта: плохо → хорошо','Как один пример меняет результат','Итерации вместо переписывания','Пусть AI сначала задаст вопросы','Проверка фактов и источников','Библиотека из 20 шаблонов'],r:'контент-план на месяц и 10 постов'},
+    {n:'03',t:'AI-изображения',img:'3d-m03',lc:'6 УРОКОВ',trend:'3D-ФИГУРКИ',d:'Обложки, рекламные баннеры, фото товара и свой персонаж в едином стиле.',l:['Как описать картинку: стиль, свет, ракурс','Правки словами: фон, одежда, надписи','Фото товара для магазина','Свой персонаж и единый стиль','Обложки для TikTok, Reels, YouTube','Права на картинки в рекламе'],r:'10 визуалов для своего проекта'},
+    {n:'04',t:'AI-видео для соцсетей',img:'3d-m04',lc:'6 УРОКОВ',trend:'AI-СЕРИАЛЫ',d:'Ролики 15–60 секунд: сцены из нейросети, движение камеры, аватар и монтаж в CapCut.',l:['Схема: картинка → движение → звук → монтаж','Как описать камеру, движение и свет','Один персонаж во всех сценах','Говорящий аватар и дубляж','Форматы, которые набирают просмотры','Субтитры, музыка и хук за 2 секунды'],r:'3 ролика для TikTok или Reels'},
+    {n:'05',t:'Голос и музыка',img:'3d-m05',lc:'5 УРОКОВ',trend:'ЦИФРОВОЙ ДВОЙНИК',d:'Озвучка роликов, клон своего голоса, дубляж на другие языки и свой трек.',l:['Озвучка: голос, интонации, паузы','Клон своего голоса и этика','Перевод и дубляж ролика','Песня или джингл для бренда','Права на AI-музыку'],r:'озвученные ролики со своей музыкой'},
+    {n:'06',t:'Автоматизация и агенты',img:'3d-m06',lc:'5 УРОКОВ',trend:'AI-ИНФЛЮЕНСЕР',d:'Сценарии, которые работают без тебя: заявки, ответы клиентам, автопостинг — без кода.',l:['Триггер → действие','Форма → таблица → уведомление','AI сортирует письма и пишет ответы','Бот, который отвечает по базе знаний','Автопостинг в соцсети'],r:'Telegram-бот для своего бизнеса'},
+    {n:'07',t:'Вайбкодинг без кода',img:'3d-m07',lc:'5 УРОКОВ',trend:'',d:'Описываешь словами — получаешь лендинг, квиз или мини-сервис с формой заявок.',l:['Как описать приложение','Лендинг для своего продукта за вечер','Калькулятор, квиз, запись на услугу','Оплата и формы заявок','Где ломается и как просить исправить'],r:'опубликованный сайт с формой заявки'},
+    {n:'08',t:'Финальный проект',img:'3d-m08',lc:'4 УРОКА',trend:'',d:'Собираешь всё в один проект и упаковываешь навыки: для своего дела, работы или клиентов.',l:['Портфолио из работ курса','Первые клиенты и цена работы','Коммерческое предложение с AI','Как следить за новыми инструментами'],r:'готовый проект и портфолио'}
   ];
   var host=document.getElementById('modules');
   function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
@@ -539,7 +541,7 @@ body:not(.ready) .orb[data-tilt]{transform:translateY(24px)}
 </script>
 <div id="iab" hidden style="position:fixed;left:0;right:0;top:0;z-index:100;padding:14px 16px;background:#D4FF3A;color:#0E0E10;font:600 15px/1.4 Manrope,system-ui,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.4)">
   <div style="max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:10px">
-    <div>⚠️ Из этого приложения Telegram может не открыться. Нажми <b>⋯</b> в правом верхнем углу → <b>«Открыть в браузере»</b>.</div>
+    <div>⚠️ Из этого приложения Telegram может не открыться. Нажми <b>⋯</b> в правом верхнем углу → <b>«Открыть в браузере»</b>.</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
       <a id="iab-go" href="#" style="background:#0E0E10;color:#D4FF3A;padding:10px 16px;border-radius:99px;text-decoration:none">Открыть бота</a>
       <button id="iab-copy" type="button" style="background:transparent;border:2px solid #0E0E10;color:#0E0E10;padding:8px 14px;border-radius:99px;font:inherit;cursor:pointer">Скопировать ссылку</button>
