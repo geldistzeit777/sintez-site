@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
-<link rel="preload" as="image" href="img/rings.webp" fetchpriority="high">
+<link rel="preload" as="image" href="img/rings-720.webp" fetchpriority="high">
 <style>html,body{margin:0;background:#0E0E10;color:#F2F0EA}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 </head><body>
 <div id="pre" aria-hidden="true"><div class="pre-in"><svg viewBox="0 0 360 260" width="150" height="108" fill="none"><circle class="pc1" cx="130" cy="130" r="104" stroke="#D4FF3A" stroke-width="18"/><circle class="pc2" cx="230" cy="130" r="104" stroke="#F2F0EA" stroke-width="18"/></svg><div class="pre-n"><span id="preN">0</span>%</div></div></div>
@@ -245,6 +245,7 @@ body.ready .wordmark .ch{transform:none;opacity:1}
 .hero .live,.hero .tagline,.hero .lead,.hero .cta-row,.hero .price-note,.orb,.stats{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.9,.2,1)}
 body.ready .hero .live{transition-delay:.1s}body.ready .hero .tagline{transition-delay:.45s}body.ready .hero .lead{transition-delay:.55s}body.ready .hero .cta-row{transition-delay:.65s}body.ready .hero .price-note{transition-delay:.75s}body.ready .orb{transition-delay:.3s}body.ready .stats{transition-delay:.8s}
 body.ready .hero .live,body.ready .hero .tagline,body.ready .hero .lead,body.ready .hero .cta-row,body.ready .hero .price-note,body.ready .orb,body.ready .stats{opacity:1;transform:none}
+.hero .lead,.orb{opacity:1}
 .orb{position:relative;aspect-ratio:1/1;max-width:100%;will-change:transform}
 .orb-v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;-webkit-mask:radial-gradient(circle at 50% 50%,#000 52%,transparent 71%);mask:radial-gradient(circle at 50% 50%,#000 52%,transparent 71%)}
 .orb-tag{position:absolute;padding:12px 18px;border-radius:16px;background:rgba(22,22,26,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);font-size:15px;color:var(--muted);animation:float 6s ease-in-out infinite}
@@ -318,7 +319,7 @@ body:not(.ready) .orb[data-tilt]{transform:translateY(24px)}
     </div>
     <div>
       <div class="orb" data-tilt aria-hidden="true">
-        <video class="orb-v" autoplay muted loop playsinline preload="auto" poster="img/rings.webp"><source src="img/rings-480.mp4" type="video/mp4" media="(max-width: 700px)"><source src="img/rings.mp4" type="video/mp4"></video>
+        <video class="orb-v" autoplay muted loop playsinline preload="auto" poster="img/rings-720.webp"><source src="img/rings-480.mp4" type="video/mp4" media="(max-width: 700px)"><source src="img/rings.mp4" type="video/mp4"></video>
         <div class="orb-tag t1"><b>8</b> модулей</div><div class="orb-tag t2"><b>42</b> урока</div><div class="orb-tag t3"><b>$15</b> навсегда</div>
       </div>
       <div class="stats">
@@ -337,9 +338,9 @@ body:not(.ready) .orb[data-tilt]{transform:translateY(24px)}
     <div class="head"><div class="eyebrow">Для кого</div><h2>Не нужен опыт и код.<br>Нужен телефон и 20 минут в день</h2></div>
     <div class="cards4">
       <article class="who"><img decoding="async" src="img/3d-t4.webp" alt="" loading="lazy" style="object-position:50% 35%"><div><h3>Блогерам</h3><p>Ролики, обложки и посты быстрее — без съёмок и дизайнера</p></div></article>
-      <article class="who"><img decoding="async" src="img/3d-m06.webp" alt="" loading="lazy"><div><h3>Предпринимателям</h3><p>Фото товаров, реклама, бот для клиентов и сайт своими руками</p></div></article>
-      <article class="who"><img decoding="async" src="img/3d-m03.webp" alt="" loading="lazy"><div><h3>Новую профессию</h3><p>Портфолио из работ курса, чтобы делать AI-контент для клиентов</p></div></article>
-      <article class="who"><img decoding="async" src="img/3d-m02.webp" alt="" loading="lazy"><div><h3>Офису и учёбе</h3><p>Письма, отчёты, таблицы и рутина, которая теперь делается сама</p></div></article>
+      <article class="who"><img decoding="async" src="img/3d-m06.webp" srcset="img/3d-m06-640.webp 640w, img/3d-m06.webp 1120w" sizes="(max-width:760px) 92vw, 660px" alt="" loading="lazy"><div><h3>Предпринимателям</h3><p>Фото товаров, реклама, бот для клиентов и сайт своими руками</p></div></article>
+      <article class="who"><img decoding="async" src="img/3d-m03.webp" srcset="img/3d-m03-640.webp 640w, img/3d-m03.webp 1120w" sizes="(max-width:760px) 92vw, 660px" alt="" loading="lazy"><div><h3>Новую профессию</h3><p>Портфолио из работ курса, чтобы делать AI-контент для клиентов</p></div></article>
+      <article class="who"><img decoding="async" src="img/3d-m02.webp" srcset="img/3d-m02-640.webp 640w, img/3d-m02.webp 1120w" sizes="(max-width:760px) 92vw, 660px" alt="" loading="lazy"><div><h3>Офису и учёбе</h3><p>Письма, отчёты, таблицы и рутина, которая теперь делается сама</p></div></article>
     </div>
   </div>
 </section>
@@ -355,8 +356,8 @@ body:not(.ready) .orb[data-tilt]{transform:translateY(24px)}
   <div class="wrap">
     <div class="head"><div class="eyebrow">Что ты соберёшь</div><h2>Не конспект — <span class="hl">готовые проекты</span></h2><p class="lead">Каждый модуль заканчивается реальным результатом.<br>Вот два из них — бот и сайт, которые ты сделаешь сам, без кода.</p></div>
     <div class="sc-grid">
-      <figure class="sc-card" data-tilt data-speed="-0.06"><img decoding="async" src="img/show-bot.webp" alt="Telegram-бот кофейни на экране телефона — проект модуля 06" loading="lazy"><figcaption><b>Модуль 06</b> Бот, который принимает заказы и бронь</figcaption></figure>
-      <figure class="sc-card" data-tilt data-speed="0.06"><img decoding="async" src="img/show-site.webp" alt="Лендинг кофейни на ноутбуке — проект модуля 07" loading="lazy"><figcaption><b>Модуль 07</b> Сайт с формой заявки — за вечер</figcaption></figure>
+      <figure class="sc-card" data-tilt data-speed="-0.06"><img decoding="async" src="img/show-bot.webp" srcset="img/show-bot-640.webp 640w, img/show-bot.webp 864w" sizes="(max-width:760px) 92vw, 660px" alt="Telegram-бот кофейни на экране телефона — проект модуля 06" loading="lazy"><figcaption><b>Модуль 06</b> Бот, который принимает заказы и бронь</figcaption></figure>
+      <figure class="sc-card" data-tilt data-speed="0.06"><img decoding="async" src="img/show-site.webp" srcset="img/show-site-640.webp 640w, img/show-site.webp 864w" sizes="(max-width:760px) 92vw, 660px" alt="Лендинг кофейни на ноутбуке — проект модуля 07" loading="lazy"><figcaption><b>Модуль 07</b> Сайт с формой заявки — за вечер</figcaption></figure>
     </div>
   </div>
 </section>
@@ -389,7 +390,7 @@ body:not(.ready) .orb[data-tilt]{transform:translateY(24px)}
 
 <section id="result" style="padding-top:0">
   <div class="wrap split">
-    <div class="photo"><img decoding="async" src="img/3d-m08.webp" alt="" loading="lazy"><div class="shade"></div><p>К концу курса у тебя портфолио, а не конспект</p></div>
+    <div class="photo"><img decoding="async" src="img/3d-m08.webp" srcset="img/3d-m08-640.webp 640w, img/3d-m08.webp 1120w" sizes="(max-width:760px) 92vw, 660px" alt="" loading="lazy"><div class="shade"></div><p>К концу курса у тебя портфолио, а не конспект</p></div>
     <div>
       <div class="eyebrow">Что останется у тебя</div>
       <ol class="outcomes">
@@ -460,7 +461,7 @@ body:not(.ready) .orb[data-tilt]{transform:translateY(24px)}
 <section style="padding-top:0">
   <div class="wrap">
     <div class="final">
-      <img decoding="async" src="img/3d-m07.webp" alt="" loading="lazy">
+      <img decoding="async" src="img/3d-m07.webp" srcset="img/3d-m07-640.webp 640w, img/3d-m07.webp 1120w" sizes="(max-width:760px) 92vw, 660px" alt="" loading="lazy">
       <div class="shade"></div>
       <div>
         <h2>Начни сегодня.<br>Первый модуль — бесплатно</h2>
@@ -526,7 +527,7 @@ body:not(.ready) .orb[data-tilt]{transform:translateY(24px)}
   M.forEach(function(m,i){
     var a=el('article','mod');
     var p=el('div','preview');
-    var img=el('img');img.src='img/'+m.img+'.webp';img.alt='';img.loading='lazy';p.appendChild(img);
+    var img=el('img');img.src='img/'+m.img+'.webp';img.srcset='img/'+m.img+'-640.webp 640w, img/'+m.img+'.webp 1120w';img.sizes='(max-width:760px) 92vw, 660px';img.alt='';img.loading='lazy';p.appendChild(img);
     p.appendChild(el('div','shade'));
     var ch=el('div','chips');ch.appendChild(el('span','chip on','МОДУЛЬ '+m.n));ch.appendChild(el('span','chip',m.lc));if(m.free){var f=el('span','chip','БЕСПЛАТНО');f.style.background='#D4FF3A';f.style.color='#0E0E10';ch.appendChild(f);}p.appendChild(ch);
     var pl=el('div','mini-play');pl.innerHTML='<svg width="18" height="18" aria-hidden="true"><use href="#tri"/></svg>';p.appendChild(pl);
