@@ -212,6 +212,7 @@ footer a{color:var(--faint)}
 
 p,li,.lead,.desc,figcaption,.result,.who p,.trend-card p,.faq details p{text-wrap:pretty}
 h1,h2,h3,.tagline,.d{text-wrap:balance}
+@media (min-width:700px){.nw{white-space:nowrap}}
 /* ===== motion upgrade ===== */
 html{scroll-behavior:smooth}
 #pre{position:fixed;inset:0;z-index:200;background:#0E0E10;display:grid;place-items:center;transition:transform .9s cubic-bezier(.76,0,.24,1)}
@@ -333,7 +334,7 @@ body:not(.ready) .orb[data-tilt]{transform:translateY(24px)}
 
 <section id="program" style="background:linear-gradient(180deg,var(--bg),#121216 30%,var(--bg))">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">Программа</div><h2>8 модулей.<br>42 урока.<br>Каждый — с готовым результатом</h2><p class="lead">Текстовые уроки в закрытой Telegram-группе, каждый модуль — отдельная тема.<br>В уроке: объяснение с примерами, готовые промпты и задание.<br>Вопросы — в чате курса.</p></div>
+    <div class="head"><div class="eyebrow">Программа</div><h2><span class="nw">8 модулей. 42 урока.</span><br>Каждый — с готовым результатом</h2><p class="lead">Текстовые уроки в закрытой Telegram-группе, каждый модуль — отдельная тема.<br>В уроке: объяснение с примерами, готовые промпты и задание.<br>Вопросы — в чате курса.</p></div>
     <div class="modules" id="modules"></div>
   </div>
 </section>
