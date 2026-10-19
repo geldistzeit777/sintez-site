@@ -141,7 +141,7 @@ footer a{color:#A9A7A0}
   var sid="";try{sid=localStorage.getItem("sintez_sid")||"";}catch(e){}
   if(!sid){sid=Math.random().toString(36).slice(2)+Date.now().toString(36);try{localStorage.setItem("sintez_sid",sid);}catch(e){}}
   // посещение страницы
-  try{var u=API+"/t?e=visit&p="+encodeURIComponent(p)+"&s="+sid+"&a="+app;if(!(navigator.sendBeacon&&navigator.sendBeacon(u)))fetch(u,{mode:"no-cors",keepalive:true});}catch(e){}
+  try{var u=API+"/t?e=visit&pg=free&p="+encodeURIComponent(p)+"&s="+sid+"&a="+app;if(!(navigator.sendBeacon&&navigator.sendBeacon(u)))fetch(u,{mode:"no-cors",keepalive:true});}catch(e){}
 
   var f=document.getElementById("f"),inp=document.getElementById("tg"),msg=document.getElementById("msg"),btn=document.getElementById("go");
   function norm(v){
