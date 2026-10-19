@@ -61,7 +61,12 @@ h3{font:800 18px/1.2 var(--display);margin:34px 0 14px}
 .list small{display:block;color:var(--muted);font-size:14.5px;margin-top:2px}
 .strip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:14px -20px 0;padding:0 20px 6px;scrollbar-width:none}
 .strip::-webkit-scrollbar{display:none}
-.strip img{flex:none;width:72%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;border:1px solid var(--line);scroll-snap-align:start;background:var(--surface)}
+.mc{flex:none;width:76%;max-width:340px;margin:0;scroll-snap-align:start;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.mc img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--surface-2)}
+.mc figcaption{padding:12px 14px 14px}
+.mc span{display:block;font:700 11px/1 var(--sans);letter-spacing:.14em;color:var(--accent);margin-bottom:6px}
+.mc b{display:block;font-size:16px;line-height:1.25}
+.mc small{display:block;color:var(--muted);font-size:14px;margin-top:3px;line-height:1.4}
 .price{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:22px;padding:16px 18px;border-radius:18px;background:linear-gradient(120deg,rgba(212,255,58,.12),rgba(123,97,255,.12));border:1px solid var(--line)}
 .price b{font:800 26px/1 var(--display);color:var(--accent)}
 .price span{color:var(--muted);font-size:14px}
@@ -109,11 +114,13 @@ footer a{color:#A9A7A0}
     </ul>
 
     <h3>Что будет дальше в курсе</h3>
+    <p class="sub" style="font-size:15px;margin:-6px 0 0">Листай →</p>
     <div class="strip">
-      <img src="../img/3d-m03-800.webp" alt="Модуль 03 — AI-изображения" loading="lazy" decoding="async" width="800" height="450">
-      <img src="../img/3d-m04-800.webp" alt="Модуль 04 — AI-видео для соцсетей" loading="lazy" decoding="async" width="800" height="450">
-      <img src="../img/3d-m06-800.webp" alt="Модуль 06 — автоматизация и агенты" loading="lazy" decoding="async" width="800" height="450">
-      <img src="../img/3d-m07-800.webp" alt="Модуль 07 — сайт без кода" loading="lazy" decoding="async" width="800" height="450">
+      <figure class="mc"><img src="../img/3d-m03-800.webp" alt="" loading="lazy" decoding="async" width="800" height="450"><figcaption><span>МОДУЛЬ 03</span><b>AI-изображения</b><small>Обложки, баннеры, фото товара и свой персонаж</small></figcaption></figure>
+      <figure class="mc"><img src="../img/3d-m04-800.webp" alt="" loading="lazy" decoding="async" width="800" height="450"><figcaption><span>МОДУЛЬ 04</span><b>AI-видео для соцсетей</b><small>Ролики 15–60 секунд для Reels и TikTok</small></figcaption></figure>
+      <figure class="mc"><img src="../img/3d-m05-800.webp" alt="" loading="lazy" decoding="async" width="800" height="450"><figcaption><span>МОДУЛЬ 05</span><b>Голос и музыка</b><small>Озвучка, клон своего голоса и свой трек</small></figcaption></figure>
+      <figure class="mc"><img src="../img/3d-m06-800.webp" alt="" loading="lazy" decoding="async" width="800" height="450"><figcaption><span>МОДУЛЬ 06</span><b>Автоматизация и агенты</b><small>Бот отвечает клиентам, пока тебя нет</small></figcaption></figure>
+      <figure class="mc"><img src="../img/3d-m07-800.webp" alt="" loading="lazy" decoding="async" width="800" height="450"><figcaption><span>МОДУЛЬ 07</span><b>Сайт без кода</b><small>Описываешь словами — получаешь лендинг</small></figcaption></figure>
     </div>
     <div class="price"><div><span>Полный курс: 8 модулей, 42 урока</span></div><div><b>$15</b> <span>навсегда</span></div></div>
 
