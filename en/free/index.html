@@ -93,6 +93,25 @@ html.tswitch *{transition:background-color .45s ease,border-color .45s ease,colo
 :root[data-theme="light"] .price{border-color:#C9D9A0}
 
 </style>
+<!--sz-geo--><script>(function(){
+var PL="en",BASE="19",SUB="/free/",API="https://learn.sintez-ai.com/api/geo";
+function g(k){try{return localStorage.getItem(k)}catch(e){return null}}function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+/* 1. автоязык на русских страницах: явный выбор человека (переключатель) важнее языка браузера */
+try{if(PL==="ru"&&!/[?&]lang=/.test(location.search)&&!/bot|crawl|spider|slurp|preview|lighthouse/i.test(navigator.userAgent)){
+var ls=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||""]),l=g("sz_lang_pick")||"";
+for(var i=0;i<ls.length&&!l;i++){var c=String(ls[i]).toLowerCase().slice(0,2);if(c==="es")l="es";else if(c==="ru"||c==="uk"||c==="be"||c==="kk")l="ru";else if(c)l="en"}
+var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||""}catch(e){}
+if(l==="en"&&/^America\/(Mexico_City|Monterrey|Cancun|Merida|Tijuana|Chihuahua|Hermosillo|Mazatlan|Bogota|Lima|Santiago|Argentina\/.*|Buenos_Aires|Caracas|Guayaquil|La_Paz|Asuncion|Montevideo|Guatemala|El_Salvador|Tegucigalpa|Managua|Costa_Rica|Panama|Havana|Santo_Domingo|Puerto_Rico)$/.test(tz))l="es";
+if(l&&l!=="ru"){location.replace("/"+l+SUB+location.search+location.hash)}}}catch(e){}
+/* 2. цена по региону: последняя известная — сразу, свежая — после ответа сервера */
+function apply(p){if(!p||p===BASE)return;var re=new RegExp("\\$"+BASE+"(?![0-9])","g"),w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n,a=[];
+while(n=w.nextNode()){var t=n.parentNode&&n.parentNode.nodeName;if(t!=="SCRIPT"&&t!=="STYLE"&&re.test(n.nodeValue))a.push(n);re.lastIndex=0}
+a.forEach(function(x){x.nodeValue=x.nodeValue.replace(re,function(){return "$"+p})});BASE=p}
+document.addEventListener("DOMContentLoaded",function(){
+apply(g("sz_price"));
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest(".langs a[lang]");if(a)s("sz_lang_pick",a.getAttribute("lang"))},true);
+fetch(API,{credentials:"omit"}).then(function(r){return r.json()}).then(function(j){if(j&&j.price){s("sz_price",j.price);apply(j.price)}}).catch(function(){})});
+})();</script><!--/sz-geo-->
 </head>
 <body>
 <div class="glow" aria-hidden="true"></div>
