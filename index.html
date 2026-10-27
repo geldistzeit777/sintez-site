@@ -23,6 +23,8 @@ if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: light)").matches
 @media (hover:none),(max-width:760px){.nav,.dock{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:var(--bg)}.sc-card,.orb{will-change:auto}}
 .orb-v{transform:translateZ(0)}
 </style>
+
+
 <!--sz-geo--><script>(function(){
 var PL="ru",BASE="15",SUB="/",API="https://learn.sintez-ai.com/api/geo";
 function g(k){try{return localStorage.getItem(k)}catch(e){return null}}function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
@@ -34,11 +36,14 @@ var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||""}catch(e){}
 if(l==="en"&&/^America\/(Mexico_City|Monterrey|Cancun|Merida|Tijuana|Chihuahua|Hermosillo|Mazatlan|Bogota|Lima|Santiago|Argentina\/.*|Buenos_Aires|Caracas|Guayaquil|La_Paz|Asuncion|Montevideo|Guatemala|El_Salvador|Tegucigalpa|Managua|Costa_Rica|Panama|Havana|Santo_Domingo|Puerto_Rico)$/.test(tz))l="es";
 if(l&&l!=="ru"){location.replace("/"+l+SUB+location.search+location.hash)}}}catch(e){}
 /* 2. цена по региону: последняя известная — сразу, свежая — после ответа сервера */
-function apply(p){if(!p||p===BASE)return;var re=new RegExp("\\$"+BASE+"(?![0-9])","g"),w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n,a=[];
-while(n=w.nextNode()){var t=n.parentNode&&n.parentNode.nodeName;if(t!=="SCRIPT"&&t!=="STYLE"&&re.test(n.nodeValue))a.push(n);re.lastIndex=0}
-a.forEach(function(x){x.nodeValue=x.nodeValue.replace(re,function(){return "$"+p})});BASE=p}
+var CUR="",SEEN=[BASE];function apply(p){if(p)CUR=p;p=CUR;if(!p||!document.body)return;if(SEEN.indexOf(p)<0)SEEN.push(p);var old=SEEN.filter(function(x){return x!==p});if(!old.length)return;var re=new RegExp("\\$("+old.join("|")+")(?![0-9])"),w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n,a=[];
+while(n=w.nextNode()){var t=n.parentNode&&n.parentNode.nodeName;if(t!=="SCRIPT"&&t!=="STYLE"&&re.test(n.nodeValue))a.push(n)}
+var rg=new RegExp(re.source,"g");a.forEach(function(x){x.nodeValue=x.nodeValue.replace(rg,function(){return "$"+p})})}
 document.addEventListener("DOMContentLoaded",function(){
 apply(g("sz_price"));
+/* блоки, которые страница дорисовывает скриптом, тоже получают цену региона */
+try{var mo=new MutationObserver(function(){apply()});mo.observe(document.body,{childList:true,subtree:true});setTimeout(function(){mo.disconnect()},8000)}catch(e){}
+window.addEventListener("load",function(){apply()});
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest(".langs a[lang]");if(a)s("sz_lang_pick",a.getAttribute("lang"))},true);
 fetch(API,{credentials:"omit"}).then(function(r){return r.json()}).then(function(j){if(j&&j.price){s("sz_price",j.price);apply(j.price)}}).catch(function(){})});
 })();</script><!--/sz-geo-->
