@@ -23,6 +23,25 @@ if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: light)").matches
 @media (hover:none),(max-width:760px){.nav,.dock{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:var(--bg)}.sc-card,.orb{will-change:auto}}
 .orb-v{transform:translateZ(0)}
 </style>
+<!--sz-geo--><script>(function(){
+var PL="es",BASE="9",SUB="/",API="https://learn.sintez-ai.com/api/geo";
+function g(k){try{return localStorage.getItem(k)}catch(e){return null}}function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+/* 1. автоязык на русских страницах: явный выбор человека (переключатель) важнее языка браузера */
+try{if(PL==="ru"&&!/[?&]lang=/.test(location.search)&&!/bot|crawl|spider|slurp|preview|lighthouse/i.test(navigator.userAgent)){
+var ls=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||""]),l=g("sz_lang_pick")||"";
+for(var i=0;i<ls.length&&!l;i++){var c=String(ls[i]).toLowerCase().slice(0,2);if(c==="es")l="es";else if(c==="ru"||c==="uk"||c==="be"||c==="kk")l="ru";else if(c)l="en"}
+var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||""}catch(e){}
+if(l==="en"&&/^America\/(Mexico_City|Monterrey|Cancun|Merida|Tijuana|Chihuahua|Hermosillo|Mazatlan|Bogota|Lima|Santiago|Argentina\/.*|Buenos_Aires|Caracas|Guayaquil|La_Paz|Asuncion|Montevideo|Guatemala|El_Salvador|Tegucigalpa|Managua|Costa_Rica|Panama|Havana|Santo_Domingo|Puerto_Rico)$/.test(tz))l="es";
+if(l&&l!=="ru"){location.replace("/"+l+SUB+location.search+location.hash)}}}catch(e){}
+/* 2. цена по региону: последняя известная — сразу, свежая — после ответа сервера */
+function apply(p){if(!p||p===BASE)return;var re=new RegExp("\\$"+BASE+"(?![0-9])","g"),w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n,a=[];
+while(n=w.nextNode()){var t=n.parentNode&&n.parentNode.nodeName;if(t!=="SCRIPT"&&t!=="STYLE"&&re.test(n.nodeValue))a.push(n);re.lastIndex=0}
+a.forEach(function(x){x.nodeValue=x.nodeValue.replace(re,function(){return "$"+p})});BASE=p}
+document.addEventListener("DOMContentLoaded",function(){
+apply(g("sz_price"));
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest(".langs a[lang]");if(a)s("sz_lang_pick",a.getAttribute("lang"))},true);
+fetch(API,{credentials:"omit"}).then(function(r){return r.json()}).then(function(j){if(j&&j.price){s("sz_price",j.price);apply(j.price)}}).catch(function(){})});
+})();</script><!--/sz-geo-->
 </head><body>
 <div id="pre" aria-hidden="true"><div class="pre-in"><svg viewBox="0 0 360 260" width="150" height="108" fill="none"><circle class="pc1" cx="130" cy="130" r="104" style="stroke:var(--mark-1)" stroke="#D4FF3A" stroke-width="18"/><circle class="pc2" cx="230" cy="130" r="104" style="stroke:var(--mark-2)" stroke="#F2F0EA" stroke-width="18"/></svg><div class="pre-n"><span id="preN">0</span>%</div></div></div>
 <div id="prog" aria-hidden="true"></div><div id="glow" aria-hidden="true"></div>
