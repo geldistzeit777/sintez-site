@@ -95,11 +95,12 @@ html.tswitch *{transition:background-color .45s ease,border-color .45s ease,colo
 </style>
 
 
+
 <!--sz-geo--><script>(function(){
-var PL="ru",BASE="15",SUB="/free/",API="https://learn.sintez-ai.com/api/geo";
+var PL="ru",BASE="15",SUB="/free/",API="https://learn.sintez-ai.com/api/geo",AUTO=false; /* AUTO=true — включить автоязык (когда вернёмся к другим гео) */
 function g(k){try{return localStorage.getItem(k)}catch(e){return null}}function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
 /* 1. автоязык на русских страницах: явный выбор человека (переключатель) важнее языка браузера */
-try{if(PL==="ru"&&!/[?&]lang=/.test(location.search)&&!/bot|crawl|spider|slurp|preview|lighthouse/i.test(navigator.userAgent)){
+try{if(AUTO&&PL==="ru"&&!/[?&]lang=/.test(location.search)&&!/bot|crawl|spider|slurp|preview|lighthouse/i.test(navigator.userAgent)){
 var ls=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||""]),l=g("sz_lang_pick")||"";
 for(var i=0;i<ls.length&&!l;i++){var c=String(ls[i]).toLowerCase().slice(0,2);if(c==="es")l="es";else if(c==="ru"||c==="uk"||c==="be"||c==="kk")l="ru";else if(c)l="en"}
 var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||""}catch(e){}
